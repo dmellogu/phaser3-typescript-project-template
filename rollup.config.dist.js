@@ -1,7 +1,7 @@
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
-import { uglify } from 'rollup-plugin-uglify';
+import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 
 export default {
@@ -56,8 +56,8 @@ export default {
         //  See https://www.npmjs.com/package/rollup-plugin-typescript2 for config options
         typescript(),
 
-        //  See https://www.npmjs.com/package/rollup-plugin-uglify for config options
-        uglify({
+        //  See https://github.com/photonstorm/phaser3-typescript-project-template/issues/7#issue-593857675
+        terser({
             mangle: false
         })
 
